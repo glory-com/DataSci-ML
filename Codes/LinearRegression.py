@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np 
 
 #自定义数据点
-df = pd.read_csv("data_linear.csv")
+df = pd.read_csv("data\data_linear.csv")
 
 #绘制预测直线和数据点
 def draw_line(k,b) :
