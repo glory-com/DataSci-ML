@@ -10,32 +10,49 @@ y = \beta_0 + \beta_1 x + \epsilon
 $$
 
 其中：
-y是响应变量（因变量）
 
-x是特征（自变量）
+$$
+\text{y是响应变量（因变量）}
+$$
 
- $ \beta_0 $ 是截距 
+$$
+\text{x是特征（自变量）}
+$$
 
- $ \beta_1 $ 是斜率 
+$$ 
+\beta_0 \text{是截距}
+$$ 
 
- $ \epsilon $ 是偏移量
+$$ 
+\beta_1 \text{是斜率} 
+$$  
 
+$$ 
+\epsilon  \text{是偏移量}
+$$
 
 二、 定义损失函数
 
 $$
-\text{L($\beta_0$ , $\beta_1$)} = \frac{1}{N} \sum_{i=1}^{N}{(y_i - (\beta_0 + \beta_1 x_i)) ^2}
+L（\beta_0 , \beta_1） = \frac{1}{N} \sum_{i=1}^{N}{(y_i - (\beta_0 + \beta_1 x_i)) ^2}
 $$
+
 
 其中: 
 
- $ y_i $ 是第i个样本的真实值
+$$
+y_i \text{是第i个样本的真实值}
+$$
 
- $ x_i $ 是第i个样本的输入
+$$ 
+x_i \text{是第i个样本的输入}
+$$
 
 三、 损失最小化
  
-对 $ \beta_0 $ 求导：
+$$ 
+\text{对} \beta_0  \text{求导：}
+$$
 
 $$
 \frac{\partial L}{\partial \beta_0} = \frac{\partial}{\partial \beta_0} \frac{\sum_{i=1}^{N}{(y_i - (\beta_0 + \beta_1 x_i)) ^2}}{N}
@@ -45,7 +62,9 @@ $$
 = -\frac{2}{N}\sum_{i=1}^{N}{(y_i-\beta_0 - \beta_1 x_i)}
 $$
 
-对 $\beta_1$ 求导：
+$$ 
+\text{对} \beta_1  \text{求导：}
+$$
 
 $$
 \frac{\partial L}{\partial \beta_1} = \frac{\partial}{\partial \beta_1} \frac{\sum_{i=1}^{N}{(y_i - (\beta_0 + \beta_1 x_i)) ^2}}{N}
@@ -55,7 +74,7 @@ $$
 = -\frac{2}{N}\sum_{i=1}^{N}{x_i(y_i-\beta_0-\beta_1x_i)}
 $$
 
-初始化两个参数 $\beta_0 , \beta_1$ ,计算MSE，通过梯度下降的方式，不断更新参数。
+初始化两个参数,计算MSE，通过梯度下降的方式，不断更新参数。
 
 四、代码
 
