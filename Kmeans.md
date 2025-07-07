@@ -1,3 +1,28 @@
+# Kmeans聚类方法
+
+Kmeans聚类是一种传统的聚类方法，相比于之前的svm，svm更加用于两种类别之间的分类，并且，由于在svm中，我们认为为了让两种的类别分类清晰，要求点到平面的距离足够大。因此，svm更加用于两类分开的较为明显的样本中，当多类样本非常靠近的时候，或者分类的界线用直线不好表示时，svm的效果不好，因此我们需要Kmeans聚类方法。
+
+## 实验过程
+
+一、 Kmeans原理
+
+相同类别的数据点，特征的距离近。所以，我们需要每一个簇的质心，计算所有点到质心的距离，将点归到这个簇。
+
+二、 具体方法
+
+1. 随机初始化k个质心。
+
+2. 计算每一个点到质心的距离。
+
+3. 得到k个簇，更新每一个簇的质心。
+
+4. 重复步骤2
+
+5. 直到质心不再更新停止
+
+三、 代码
+
+```python
 import matplotlib.pyplot as plt 
 import pandas as pd 
 import numpy as np 
@@ -63,7 +88,6 @@ class Kmeans :
                 break 
             
             self.plot_clusters(epoch)
-
             
     def plot_clusters(self, epoch):
         plt.figure(figsize=(8, 6))
@@ -87,16 +111,12 @@ class Kmeans :
 
         plt.grid(True)
         plt.show(block=False)
-        plt.pause(2) 
+        plt.pause(5) 
         plt.close()
 
 
+km = Kmeans(4 , df , 1000)
+km.train()    
+```
 
-km = Kmeans(2 , df , 1000)
-km.train()
-
-
-
-
-                
-            
+Kmeans的优点相比于svm的优点显而易见，但是当质心在两个簇的中间时，可能会导致分类的不明确，因此，需要多次实验才能够达到最好的效果。

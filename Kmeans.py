@@ -63,7 +63,6 @@ class Kmeans :
                 break 
             
             self.plot_clusters(epoch)
-
             
     def plot_clusters(self, epoch):
         plt.figure(figsize=(8, 6))
@@ -87,12 +86,11 @@ class Kmeans :
 
         plt.grid(True)
         plt.show(block=False)
-        plt.pause(2) 
+        plt.pause(5) 
         plt.close()
 
 
-
-km = Kmeans(2 , df , 1000)
+km = Kmeans(4 , df , 1000)
 km.train()
 
 
