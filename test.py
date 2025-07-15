@@ -1,6 +1,8 @@
-import matplotlib.pyplot as plt 
-import pandas as pd 
+import matplotlib.pylab as plt 
 import numpy as np 
-import random
+import pandas as pd
+import random 
 
-print(random.uniform(-10 , 10))
+
+data = pd.read_csv("data.csv")
+print(data['X'].iloc[1])

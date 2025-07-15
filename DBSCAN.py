@@ -51,6 +51,6 @@ class DBSCAN :
 
 
 df = pd.read_csv("data_density.csv")
-d = DBSCAN(df , r = 0.6 , mnpt = 3)
+d = DBSCAN(df , r = 0.15 , mnpt = 2)
 d.classpt()
 d.draw()
